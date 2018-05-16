@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization - Homework 3</title>
+    <link rel="stylesheet" href="styles.css?version=1">
+    <style type="text/css">
+    #map {
+
+        position: relative;
+        top: 0px;
+        left: 230px;
+    }
+   
+
+    .bar:hover {
+        fill: brown;
+    }
+
+    .axis--x path {
+        display: none;
+    }
+
+    
+    
+    Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .Cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    </style>
+    <title></title>
+    <script src="d3/d3.js"></script>  <!-- "https://d3js.org/d3.v4.min.js"-->
+    <script src="d3/topojson.js"></script> <!-- src="https://d3js.org/topojson.v2.min.js"-->
+    
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <header>
+        <img src="assets/fifa_russia_logo.png" alt="Fifa WC Russia Logo" id="logo" />
+        <h1>Homework 3: FIFA World Cup Statistics</h1>
+        <div>Name: &lt;Alexander Statsenko&gt;</div>
+        <div>E-Mail: &lt;alexander.statsenko198@gmail.com&gt</div>
+    </header>
+    <div id="details" class="view">
+        <h2 id="edition">2018 FIFA World Cup Russia</h2>
+        <h3>Host</h3>
+        <span id="host"></span>
+        <h3>Winner</h3>
+        <span id="winner"></span>
+        <h3>Silver</h3>
+        <span id="silver"></span>
+        <h3>Teams</h3>
+        <span id="teams"></span>
+    </div>
+
+
+   
+    <div id="bar-chart" class="view">
+        <h2 class="">Bar Chart</h2>
+        <div id="plot-selector">
+            <label>Plot:</label>
+            <select id="dataset" onchange= "changeData()">
+                <option selected value="attendance">Attendance</option>
+                <option value="teams">Teams</option>
+                <option value="matches">Matches</option>
+                <option value="goals">Goals</option>
+            </select>
+            <svg width="400" height="475"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            
+
+
+           <script type="text/javascript" src="newbarchart.js"></script>
+    
+           
+
+
+
+        </div>
+        <svg width="500" height="400" id="barChart">
+            <g id="xAxis"></g>
+            <g id="yAxis"></g>
+            <g id="bars"></g>
+        </svg>
+    </div>
+    <div id="map-view" class="view">
+        <h2>World Map</h2>
+        <!-- SVG for "Host, Participant, Winner, Runner-Up" logo -->
+        <svg width="400" height="30">
+            <rect class="host legend-element" x="0" y="5"></rect>
+            <text x="18" y="18">Host</text>
+            <rect class="team legend-element" x="60" y="5"></rect>
+            <text x="78" y="18">Participant</text>
+            <circle class="gold" cx="176" cy="12" r="8"></circle>
+            <text x="188" y="18">Winner</text>
+            <circle class="silver" cx="258" cy="12" r="8"></circle>
+            <text x="270" y="18">Runner-Up</text>
+        </svg>
+    </div>
+    <div id="map"></div>
+
+    
+
+
+    
+    <div class="Table">
+    <div class="Title">
+        <h2 id="edition">Selected Country Infromation</h2>
+    </div>
+    <div class="Heading">
+        <div class="Cell">
+            <p>Country</p>
+        </div>
+        <div class="Cell">
+            <p>National Team Appearances:</p>
+        </div>
+        <div class="Cell">
+            <p>Won</p>
+        </div>
+        <div class="Cell">
+            <p>Runner up </p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="Cell">
+            <p id = "countryHeader" ></p>
+        </div>
+        <div class="Cell">
+            <p id = "worldcups" ></p>
+        </div>
+        <div class="Cell">
+            <p id = wonStatistic> </p>
+        </div>
+        <div class="Cell">
+            <p id = "runnerUpcountry"></p>
+        </div>
+    </div>
+
+</div>
+
+    
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript" src="map.js"></script>
+
+
+    <script type="text/javascript" >
+
+        
+    </script>
+   
+    
+
+</body>
+
+</html>
